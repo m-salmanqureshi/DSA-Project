@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>SHU Campus Navigation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header">
+  <div id="logo">
+    <div id="logo-bar"></div>
+    <div>
+      <div id="logo-title">SHU Campus Navigation</div>
+      <div id="logo-sub">Salim Habib University</div>
+    </div>
+  </div>
+  <div id="floor-tabs">
+    <div class="ftab active" data-f="0">GF</div>
+    <div class="ftab" data-f="1">1F</div>
+    <div class="ftab" data-f="2">2F</div>
+    <div class="ftab" data-f="3">3F</div>
+    <div class="ftab" data-f="4">4F</div>
+  </div>
+</div>
+
+<!-- 3D VIEWPORT -->
+<div id="viewport">
+  <canvas id="three-canvas"></canvas>
+
+  <!-- Legend -->
+  <div id="legend">
+    <div class="leg"><div class="ldot" style="background:#4FC3F7"></div>Room / Lecture</div>
+    <div class="leg"><div class="ldot" style="background:#26C6DA"></div>Lab</div>
+    <div class="leg"><div class="ldot" style="background:#80CBC4"></div>Office</div>
+    <div class="leg"><div class="ldot" style="background:#81C784"></div>Lift / Stairs</div>
+    <div class="leg"><div class="ldot" style="background:#FFB74D"></div>Entry / Gate</div>
+    <div class="leg"><div class="ldot" style="background:#E74C3C"></div>Start &nbsp;<div class="ldot" style="background:#2ECC71"></div>End</div>
+  </div>
+
+  <!-- Zoom controls -->
+  <div id="zoom-btns">
+    <div class="zbtn" id="zin">+</div>
+    <div class="zbtn" id="zout">−</div>
+    <div class="zbtn" id="zreset" style="font-size:11px">⌂</div>
+  </div>
+
+  <!-- Hover tooltip -->
+  <div id="tooltip"><span id="tt-floor"></span><span id="tt-name"></span></div>
+
+  <!-- Click-to-select hint -->
+  <div id="sel-hint">Click a node to set START</div>
+</div>
+
+<!-- INFO BAR -->
+<div id="info-bar"></div>
+
+<!-- SEARCH PANEL -->
+<div id="search-panel">
+  <div id="search-row">
+    <div class="s-group">
+      <div class="s-label"><div class="s-dot"></div>From</div>
+      <input class="s-input" id="from-inp" placeholder="Starting location..." autocomplete="off">
+      <div class="drop" id="from-drop"></div>
+    </div>
+    <div class="s-group">
+      <div class="s-label"><div class="s-dot"></div>To</div>
+      <input class="s-input" id="to-inp" placeholder="Destination..." autocomplete="off">
+      <div class="drop" id="to-drop"></div>
+    </div>
+    <button id="find-btn">FIND PATH</button>
+    <button id="clear-btn">✕</button>
+  </div>
+</div>
+
+<!-- Three.js from CDN (works on GitHub Pages) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
